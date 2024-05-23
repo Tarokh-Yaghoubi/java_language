@@ -1,22 +1,21 @@
 package java_language;
 
-import javax.swing.plaf.synth.SynthStyle;
-import java.nio.file.FileSystemNotFoundException;
-
 public class MoreOnLiterals {
     public static void main(String[] args) {
         // this is a binary number
         int x = 0b1010; // this specifies the decimal value 10 using a binary literal
         int one = 0b0001;
         int zero = 0b0000;
+
         System.out.println("one AND with zero is ---->>> " +  (one & zero));
         // you can use underscores to separate numbers in Java, and the Java language will discard them in compile time
         long  number = 234_123_982; // this is a valid way to present a number in Java.
         // even you can add more underscores, and Java will discard them all at compile time
         System.out.println("number is ---->>> " + number);
         double doublyNum = 13246351.164631D;
-        float floatyNum = 968676541.243F;
+        float  floatyNum = 968676541.243F;
         double hexaDecFloat = 0x12.2P2; // this is also supported, but it is rarely used
+
         System.out.println("floatyNum is ---->>> " + floatyNum);
         System.out.println("doubleyNum is ---->>> " + doublyNum);
         System.out.println(true != false);
@@ -66,7 +65,6 @@ class DynamicVariableInit {
     public static void rightTriangleCalc() {
         // a and b are initialized by constants
         double a = 3.0, b = 4.0;
-
         // variable 'c' is dynamically initialized
         double c = Math.sqrt(a * a + b * b);
         System.out.println("Hypotenuse is ---->>> " + c);
@@ -84,9 +82,20 @@ class LifeTime {
             int y = -1;
             System.out.println("y is --->>> " + y); // this always prints -1
             y = 100;
+            int first = 234;
+            float second = (float)first;
+            System.out.println("second is ---->>> " + second);
             System.out.println("y is now --->>> " + y);
         }
+
+        byte someByte = 126;
+        // this is possible. because "int" is large enough to hold all data of a "byte" value.
+        int holdingByteVal = someByte;
+        System.out.println("holdingByteVal is ---->>> " + holdingByteVal);
+
+        // Narrowing Conversions are not done automatically in Java.
+        // You have to do it yourself, because you are going to face data lose in this type
+        // of conversion.
+        // when a float assigns to an Integer type, truncation happens.
     }
-
 }
-
