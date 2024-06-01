@@ -1,7 +1,9 @@
 package java_language;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ControlStatements {
     public static void main(String[] args) {
@@ -23,6 +25,15 @@ public class ControlStatements {
 
         NestedForLoops nestedObj = new NestedForLoops();
         nestedObj.main(null);
+
+        LabeledBreak labels = new LabeledBreak();
+        labels.main(null);
+
+        ForEach foreachObj2 = new ForEach();
+        foreachObj2.main(null);
+
+        ContinueKeyword continueKeyObj = new ContinueKeyword();
+        continueKeyObj.main(null);
     }
 
     public static void sendData() {
@@ -128,5 +139,106 @@ class NestedForLoops {
             }
             System.out.println();
         }
+    }
+}
+
+class LabeledBreak {
+    public static void main(String[] args) {
+        labeledBreaks();
+    }
+
+    public static void labeledBreaks() {
+        boolean t = true;
+
+        first: {
+            second: {
+                third:{
+                    System.out.println("Before the break");
+                    if (t) break second;
+                    System.out.println("this will not execute");
+                }
+                System.out.println("this will not execute");
+            }
+            System.out.println("this is not in the second block");
+        }
+    }
+}
+
+class ForEach {
+    public static void main(String[] args) {
+        forEachTest();
+        List<String> myList = new ArrayList<String>();
+
+        myList = forEachSearch();
+        System.out.println("First index is the boolean result ---->>>> " + myList.getFirst());
+        System.out.println("Last index is the index at which the number is found ------>>> " + myList.getLast());
+        System.out.println("The list of results is ----<>>> " + myList);
+    }
+
+    public static void forEachTest() {
+        int sum = 0;
+        int [][] nums = new int[3][5];
+
+        // give nums some values
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 5; j++) {
+                nums[i][j] = (i + 1) * (j + 1);
+            }
+        }
+
+        // use for-each for to display and sum the values
+
+        for (int[] x : nums) {
+            for (int y : x) {
+                System.out.print(y + " ");
+                sum += y;
+            }
+        }
+
+        System.out.println("Summation is ---->>> " + sum);
+    }
+
+    public static @NotNull List<String> forEachSearch() {
+        int[] nums = {1, 3, 54, 12, 10, 25, 26, 28, 65, 34, 16};
+        List<String> list = new ArrayList<String>();    // parenthesis are for initialization capacity
+        int count = 0;
+        boolean found = false;
+
+        for (int x : nums) {
+            if (x == 26) {
+                found = true;
+                list.add("true");
+                String counter = Integer.toString(count);
+                list.add(counter);
+                return list;
+            }
+            count++;
+        }
+
+        // type inference could be used inside the for-each for loops,
+        // like this:
+        // for (var v : numbers) { // do something; }
+
+        return list;
+    }
+}
+
+class ContinueKeyword {
+    public static void main(String[] args) {
+        List <Integer> list = new ArrayList<Integer>();
+        list = createAnotherList();
+        System.out.println(list);
+    }
+
+    public static @NotNull List<Integer> createAnotherList() {
+        List<Integer> list = new ArrayList<Integer>(5);
+        List<Integer> finalList = new ArrayList<Integer>();
+        Collections.addAll(list, 66, 17, 28, 48, 65);
+        for (var v : list) {
+            if (v != 28) finalList.add(v);
+            else continue;
+            // when the loop meets the value 28, it will append it to the list.
+        }
+        return finalList;
     }
 }
