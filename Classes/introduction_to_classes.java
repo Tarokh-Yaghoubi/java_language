@@ -19,8 +19,11 @@ public class introduction_to_classes {
 
     public static void main(String[] args) {
         BoxDemo boxDemo;    // declare reference to object
+        BoxDemo boxDemo2;
         boxDemo = new BoxDemo();    // allocate a Box object
-        boxDemo.boxTest();      // call the BoxDemp method
+        boxDemo2 = boxDemo; // now this two both refer to the same object
+        boxDemo = null; // here, boxDemo is set to null, but boxDemo2 is still pointing to that object
+        boxDemo2.boxTest();      // call the BoxDemp method
 
     }
 }
