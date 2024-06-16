@@ -1,5 +1,7 @@
 package java_language.Classes;
 
+import java.util.Locale;
+
 public class introduction_to_classes {
     // a class defines a new data type
     // thus a class is a template for an object, and an object is an instance of a class
@@ -33,6 +35,16 @@ class Box {
     double width;
     double height;
     double depth;
+
+    void volume() {
+        System.out.print("Volume: ");
+        System.out.println(width * height * depth);
+    }
+
+    int square(int i) {
+        // returning the square of 'i'
+        return i * i;
+    }
 }
 
 class BoxDemo {
@@ -46,5 +58,31 @@ class BoxDemo {
 
         vol = box.width * box.height * box.depth;
         System.out.println("Box vol is ------>>" + vol);
+    }
+}
+
+class Programmer {
+    int age;
+    String name;
+    String programming_language;
+    boolean isCoding;
+
+    Programmer() {
+        age = 20;
+        name = "Tarokh";
+        programming_language = "Java, C";
+        isCoding = true;
+    }
+
+    void echo() {
+        System.out.println(name + " is " + programming_language + " developer and " + age + " years old.");
+    }
+
+    void resetVal(int age, String name, String programming_language, boolean isCoding) {
+        this.age = age;
+        this.name = name;
+        this.programming_language = programming_language;
+        this.isCoding = isCoding;
+        echo();
     }
 }
