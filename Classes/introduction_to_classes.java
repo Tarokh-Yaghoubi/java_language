@@ -27,6 +27,11 @@ public class introduction_to_classes {
         boxDemo = null; // here, boxDemo is set to null, but boxDemo2 is still pointing to that object
         boxDemo2.boxTest();      // call the BoxDemp method
 
+        System.out.println("--------------------------");
+        Programmer programmer_one = new Programmer(20, "Tarokh", "C programming lang", true);
+        programmer_one.echo();
+        programmer_one.resetVal(23, "Jamy", "Kotlin", false);
+
     }
 }
 
@@ -67,11 +72,11 @@ class Programmer {
     String programming_language;
     boolean isCoding;
 
-    Programmer() {
-        age = 20;
-        name = "Tarokh";
-        programming_language = "Java, C";
-        isCoding = true;
+    Programmer(int age, String name, String programming_language, boolean isCoding) {
+        this.age = age;
+        this.name = name;
+        this.programming_language = programming_language;
+        this.isCoding = isCoding;
     }
 
     void echo() {
