@@ -29,7 +29,7 @@ class BoolTest {
     }
     public static void checkBoolean() {
 
-        
+
         boolean isSeven = false;
         int number = 0;
         while (number != 7) {
