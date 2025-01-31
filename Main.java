@@ -1,19 +1,27 @@
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
+        String fizzBuzz = "";
 
-        System.out.println("This is my first Java Program");
+        if ((number % 5 == 0) && (number % 3 == 0))
+            fizzBuzz = "FizzBuzz";
+        else if (number % 3 == 0)
+            fizzBuzz = "Buzz";
+        else if (number % 5 == 0)
+            fizzBuzz = "Fizz";
+        else
+            fizzBuzz += number;
+        System.out.println(fizzBuzz);
 
-        // printf is working as it works in C !!
-        System.out.printf("%s\n", "Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-
-            System.out.println("i = " + i);
-        }
     }
 
     // testing
+
 
     // String[] args -> declares a parameter named args, which is an array of instances of the class String.
     // Arrays are collections of similar objects.

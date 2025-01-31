@@ -170,8 +170,6 @@ class ForEach {
         List<String> myList = new ArrayList<String>();
 
         myList = forEachSearch();
-        System.out.println("First index is the boolean result ---->>>> " + myList.getFirst());
-        System.out.println("Last index is the index at which the number is found ------>>> " + myList.getLast());
         System.out.println("The list of results is ----<>>> " + myList);
     }
 
