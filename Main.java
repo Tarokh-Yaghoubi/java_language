@@ -13,6 +13,8 @@ public class Main {
         }
     }
 
+    // testing
+
     // String[] args -> declares a parameter named args, which is an array of instances of the class String.
     // Arrays are collections of similar objects.
 
