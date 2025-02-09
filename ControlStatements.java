@@ -1,6 +1,5 @@
 package java_language;
 
-import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -117,7 +116,7 @@ class forEachVersion {
     }
 
     // this function calculates the sum of the array numbers and return the sum
-    public static int sum(int @NotNull [] numbers) {
+    public static int sum(int @org.jetbrains.annotations.NotNull [] numbers) {
         int sum = 0;
         for (int i : numbers) sum += i;
         return sum;
@@ -196,7 +195,7 @@ class ForEach {
         System.out.println("Summation is ---->>> " + sum);
     }
 
-    public static @NotNull List<String> forEachSearch() {
+    public static @org.jetbrains.annotations.NotNull List<String> forEachSearch() {
         int[] nums = {1, 3, 54, 12, 10, 25, 26, 28, 65, 34, 16};
         List<String> list = new ArrayList<String>();    // parenthesis are for initialization capacity
         int count = 0;
@@ -228,7 +227,8 @@ class ContinueKeyword {
         System.out.println(list);
     }
 
-    public static @NotNull List<Integer> createAnotherList() {
+    
+    public static @org.jetbrains.annotations.NotNull List<Integer> createAnotherList() {
         List<Integer> list = new ArrayList<Integer>(5);
         List<Integer> finalList = new ArrayList<Integer>();
         Collections.addAll(list, 66, 17, 28, 48, 65);

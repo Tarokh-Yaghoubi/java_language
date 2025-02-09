@@ -1,11 +1,21 @@
 
 import java.util.Scanner;
 
+import Classes.Employee;
+import Classes.TextBox;
+
 public class Main {
     public static void main(String[] args) {
-        Mortgage.mortgageCalculator();
+        // Mortgage.mortgageCalculator();
+
+        var employee = new Employee();
+        employee.setBaseSalary(1000);
+        employee.setHourlyRate(20);
+        int vage = employee.calculateVage(10);
+        System.out.println(vage);
 
     }
+
 
     // String[] args -> declares a parameter named args, which is an array of instances of the class String.
     // Arrays are collections of similar objects.
