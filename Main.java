@@ -1,18 +1,16 @@
 
 import java.util.Scanner;
 
+import Classes.Browser;
 import Classes.Employee;
 import Classes.TextBox;
 
 public class Main {
     public static void main(String[] args) {
         // Mortgage.mortgageCalculator();
-
-        var employee = new Employee();
-        employee.setBaseSalary(1000);
-        employee.setHourlyRate(20);
-        int vage = employee.calculateVage(10);
-        System.out.println(vage);
+        var employee = new Employee(50_000, 2);
+        int wage = employee.calculateVage(10);
+        System.out.println(wage);
 
     }
 
