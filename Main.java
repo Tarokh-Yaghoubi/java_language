@@ -13,9 +13,8 @@ public class Main {
 
         public static void main(String[] args) {
             var refactor = new RefactoredMortgageCalculator(2000, 10F, (byte) 10);
-            var refactor2 =  new RefactoredMortgageCalculator(3000, 1.0F, (byte) 3);
-
-
+            refactor.printMortgage();
+            refactor.printPaymentSchedule();
         }
 
         public static void main_2(String[] args) {
