@@ -1,6 +1,10 @@
 package Inheritance;
 
 import Classes.TextBox;
+import org.w3c.dom.Text;
+
+import java.lang.reflect.AnnotatedType;
+import java.sql.SQLOutput;
 
 public class UIControl {
     private boolean isEnabled = false;
@@ -23,13 +27,32 @@ public class UIControl {
         return isEnabled;
     }
 
+    // This is how we can override a method
+
+
+
 }
 
 class TestUIControl {
     public static void main(String[] args) {
-        var control = new TextBox();
-        System.out.println(control.hashCode());
-        control.enable();
-        System.out.println(control.isEnabled());
+//        var control = new TextBox();
+//        System.out.println(control.hashCode());
+//        control.enable();
+//        System.out.println(control.isEnabled());
+//        System.out.println(control.toString());
+//        var control = new UIControl(true);
+        var textBox = new TextBox();
+        show(textBox);
+
+    }
+
+    public static void show(UIControl object) {
+        // This is what we call down-casting
+        if (object instanceof TextBox) {
+            var textBox = (TextBox) object;
+            textBox.setText("Tarokh is a good man");
+        }
+
+        System.out.println(object);
     }
 }

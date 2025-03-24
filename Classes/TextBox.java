@@ -17,5 +17,10 @@ public class TextBox extends UIControl {
     public void clear() {
         this.text = "";
     }
-}
 
+    @Override
+    public String toString() {
+        return text;
+    }
+
+}
