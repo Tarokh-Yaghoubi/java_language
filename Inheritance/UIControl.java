@@ -6,14 +6,20 @@ import org.w3c.dom.Text;
 import java.lang.reflect.AnnotatedType;
 import java.sql.SQLOutput;
 
-public class UIControl {
+// we declare this class and the render method as abstract
+// because the UIControl class is a base class which we are not going to
+// instantiate it at all.
+
+public abstract class UIControl {
     private boolean isEnabled = false;
 
-    public UIControl(boolean isEnabled) {
-        this.isEnabled = isEnabled;
+//    public UIControl(boolean isEnabled) {
+//        this.isEnabled = isEnabled;
+//
+//        System.out.println("UI Control constructor");
+//    }
 
-        System.out.println("UI Control constructor");
-    }
+    public abstract void render();
 
     public void enable() {
         this.isEnabled = true;
