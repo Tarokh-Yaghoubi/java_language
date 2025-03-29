@@ -4,6 +4,26 @@ import Inheritance.UIControl;
 
 import java.util.HashMap;
 
+// We can implement this interface using a class or many other classes
+// depending on the usage
+// a class can implement many interfaces
+// this is a modern way of Abstraction and Polymorphism
+// We can reach Abstraction and Polymorphism using interfaces
+// You cannot implement methods inside interfaces and you should just override them in
+// the specified class.
+// In Java 8+ we can use 'default' to implement a default implementation for the method.
+
+interface Payments {
+    default public void fuck() {
+        System.out.printf("asd");
+    }
+
+    // we override these methods in the specified classes.
+    public void sendTrans();
+    public void getTrans();
+    public void createMessage();
+}
+
 public class CheckBox extends UIControl {
     @Override
     public void render() {
