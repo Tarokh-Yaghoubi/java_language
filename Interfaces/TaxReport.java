@@ -5,6 +5,8 @@ package Interfaces;
 // change a single thing in TaxCalculator we need to change
 // TaxReport as well.
 
+import org.jetbrains.annotations.NotNull;
+
 public class TaxReport {
     private CanTaxCalculator calculator;
 
@@ -22,5 +24,14 @@ public class TaxReport {
     public void show() {
         var tax = calculator.calculateTax();
         System.out.println(tax);
+    }
+
+    public void show(@NotNull CanTaxCalculator calculator) {
+        var tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+
+    public void setCalculator(CanTaxCalculator calculator) {
+        this.calculator = calculator;
     }
 }
