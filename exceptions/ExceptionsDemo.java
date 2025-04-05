@@ -24,7 +24,7 @@ public class ExceptionsDemo {
             if (reader != null) {
                 try {
                     reader.close();
-                } catch (IOException e) {
+                } catch (IOException e) { // test
                     System.out.println(e.getMessage());
                 }
             }
