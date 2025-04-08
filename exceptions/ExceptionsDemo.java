@@ -2,7 +2,6 @@ package exceptions;
 
 import org.jetbrains.annotations.NotNull;
 
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
@@ -31,6 +30,16 @@ public class ExceptionsDemo {
         }
     }
 
+    public static void show_account() throws IOException {
+        var account = new Account();
+        try {
+            account.deposit(-1);
+        } catch (IOException e) {
+            System.out.println("Unexpected error");
+            throw e;
+        }
+    }
+
     public static void sayHello(@NotNull String name) {
         System.out.println(name.toUpperCase());
     }
@@ -39,6 +48,11 @@ public class ExceptionsDemo {
 
 class TestExceptions {
     public static void main(String[] args) {
-        ExceptionsDemo.show();
+        // ExceptionsDemo.show();
+        try {
+            ExceptionsDemo.show_account();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
