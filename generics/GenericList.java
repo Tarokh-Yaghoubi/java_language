@@ -4,7 +4,8 @@ package generics;
 // just like our methods can have parameters, our class can have parameters as well.
 // Also we can use 'E', to specify that this class takes many elements.
 
-public class GenericList<T> {
+
+public class GenericList<T extends Number> {
     // here we have a compilation error, because the compiler does not know the type of T
     // at this stage.
     // so we can use Object class and cast it to an array of T.
@@ -28,16 +29,20 @@ class GenericListDemo {
         // This way, we have compile-time type-safety.
 
         var genericList = new GenericList<Integer>();
-        var genericStr = new GenericList<String>();
+//      var genericStr = new GenericList<String>();
 
         genericList.add(3);
         genericList.add(4);
         genericList.add(5);
         genericList.add(6);
 
-        genericStr.add("First");
-        genericStr.add("Second");
-        String second = genericStr.get(1);
-        System.out.println("Second param -> " + second);
+        // we have restricted our generic class to only accept Number class children
+//        genericStr.add("First");
+//        genericStr.add("Second");
+//        String second = genericStr.get(1);
+//        System.out.println("Second param -> " + second);
+
+        GenericList<Integer> numbers = new GenericList<>();
+        numbers.add(23);
     }
 }
