@@ -5,6 +5,8 @@ package generics;
 // Also we can use 'E', to specify that this class takes many elements.
 
 
+import jdk.jshell.execution.Util;
+
 public class GenericList<T extends Number> {
     // here we have a compilation error, because the compiler does not know the type of T
     // at this stage.
@@ -26,6 +28,9 @@ public class GenericList<T extends Number> {
 class GenericListDemo {
     public static void main(String[] args) {
 
+        var max = Utils.max(new User(2), new User(3));
+        System.out.println(max);
+        Utils.printUser(new Instructor(23));
         // This way, we have compile-time type-safety.
 
         var genericList = new GenericList<Integer>();

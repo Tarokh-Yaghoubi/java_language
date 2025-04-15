@@ -17,4 +17,9 @@ public class User implements Comparable<User>{
     public int compareTo(@NotNull User user) {
         return points - user.points;
     }
+
+    @Override
+    public String toString() {
+        return "Points = " + points;
+    }
 }
