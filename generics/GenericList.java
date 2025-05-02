@@ -4,10 +4,11 @@ package generics;
 // just like our methods can have parameters, our class can have parameters as well.
 // Also we can use 'E', to specify that this class takes many elements.
 
+import org.jetbrains.annotations.NotNull;
 
-import jdk.jshell.execution.Util;
+import java.util.Iterator;
 
-public class GenericList<T extends Number> {
+public class GenericList<T> implements Iterable<T> {
     // here we have a compilation error, because the compiler does not know the type of T
     // at this stage.
     // so we can use Object class and cast it to an array of T.
@@ -21,6 +22,31 @@ public class GenericList<T extends Number> {
 
     public T get(int index) {
         return items[index];
+    }
+
+    @Override
+    public @NotNull Iterator<T> iterator() {
+        return new ListIterator(this);
+    }
+
+    private class ListIterator implements Iterator<T> {
+
+        private GenericList<T> list;
+        private int index;
+
+        public ListIterator(GenericList<T> list) {
+            this.list = list;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return (index < list.count);
+        }
+
+        @Override
+        public T next() {
+            return list.items[index++];
+        }
     }
 }
 
