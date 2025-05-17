@@ -24,6 +24,9 @@ public class CollectionsDemo {
         var arr = collection.toArray(new String[0]);
 
         System.out.println(collection);
+
+        SetDemo.show();
+        HashTables.show();
     }
 }
 
