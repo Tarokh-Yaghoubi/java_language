@@ -19,6 +19,21 @@ public class CollectionsDemo {
         collection.add("a");
         collection.add("b");
         collection.add("c");
+
+         // The list interface extends the collection interface and gives us the functionality
+        // to get elements by their index - Implementation -> ArrayList
+
+        // Queue -> The QUEUE interface represents a queue of objects. we use them to process jobs
+        // in the order we receive them. - Implementation -> ArrayDeque
+
+        //  SET interface -> Represents a unique list of values
+
+        // MAP interface -> Represents a set of key value pairs
+
+        for (String s : collection) {
+            System.out.println("S -> " + s);
+        }
+
         collection.clear();
         Collections.addAll(collection, "d", "e", "f");
         var arr = collection.toArray(new String[0]);
