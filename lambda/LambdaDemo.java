@@ -159,6 +159,9 @@ public class LambdaDemo {
         };
         printIfEven.accept(10);
 
+        Predicate<Character> isC = character -> character == 'c';
+        if (isC.test('a')) System.out.println("character is c");
+        else System.out.println("character is not c");
     }
 
     public static void greet(Printer printer) {
