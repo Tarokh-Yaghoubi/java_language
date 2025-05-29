@@ -39,5 +39,6 @@ public class CanFitWhere {
 class CanFitWhereDemo {
     public static void main(String[] args) {
         CanFitWhere.show();
+
     }
 }
