@@ -8,4 +8,9 @@ public class Movies {
         this.title = title;
         this.likes = likes;
     }
+
+    public int getLikes() {
+        return  this.likes;
+    }
+
 }
